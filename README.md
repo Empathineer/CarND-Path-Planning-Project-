@@ -1,6 +1,6 @@
 # **CarND-Highway-Planning-Project**  [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-![Highway-Path-Planning-Demo](output_video/GIF-highway-path-planning-end-cut.gif)
+![Highway-Path-Planning-Demo](output/GIF-highway-path-planning-end-cut.gif)
 
 This project implements a path-planning algorithm that generates safe but efficient trajectories for an autonomous vehicle to execute along the simulated highway. 
 
