@@ -1,6 +1,8 @@
 # **CarND-Highway-Planning-Project**  [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-![Highway-Path-Planning-Demo](output/GIF-highway-path-planning-end-cut.gif)
+![Highway-Path-Planning-Demo](output_video/GIF-highway-path-planning-end-cut.gif)
+
+## Objective
 
 This project implements a path-planning algorithm that generates safe but efficient trajectories for an autonomous vehicle to execute along the simulated highway. 
 
@@ -70,15 +72,13 @@ The sensor fusion variables carries all the relevant information for each car on
 `[sensor_fusion]` A 2d vector of cars and then that car's [car's unique ID, car's x position in map coordinates, car's y position in map coordinates, car's x velocity in m/s, car's y velocity in m/s, car's s position in frenet coordinates, car's d position in frenet coordinates. 
 
 
-
-
 ### Model Structure 
 The algorithm accomplishes several main functionalities:   
 
 
 1. <b>Process input data from sensor fusion and highway map.</b> At the start of the program, class ```EgoVehicle``` within ```vehicle.cpp``` is instantiated, which then allows initialization of the self-driving car (SDC), also referred to as Ego, with data drawn from the sensor fusion regarding its own state. Furthermore, it invokes the OtherVehicle class method to perform the same state initialization for other cars on the road.
 
-2. <b>Determine lane change.</b> The model will track the lane positions, distance w.r.t to the SDC, and velocities of neighboring vehicles in its current, left, or right lane through ```lane_tracker.cpp```. This class is also where the SDC can retrieve and decide among a finite number of states: stay in current lane, change left, and change right. In doing so, it is able to execute a lane transition when the car ahead would advise such move and safety criteria has been met.
+2. <b>Determine lane change.</b> The model will track the lane positions, distance w.r.t to the SDC, and velocities of neighboring vehicles in its current, left, or right lane through ```lane_tracker.cpp```. This class is also where the SDC can retrieve and decide among a finite number of states: stay in current lane, change left, and change right. Additionally, it keeps track of the distance between itself and the car ahead and will try to change lanes when the value is below a safety criteria. Otherwise, it will remain in the same lane with a more conservative following speed. 
 
 *`NOTE:`In reality, the model would need to generate finer grained predictions that extend to a horizon of 10-20 seconds. Additionally, predictions should be made for **all** dynamic objects.
 
