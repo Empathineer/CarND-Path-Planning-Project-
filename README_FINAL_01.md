@@ -2,6 +2,8 @@
 
 ![Highway-Path-Planning-Demo](output_video/GIF-highway-path-planning-end-cut.gif)
 
+## Objective
+
 This project implements a path-planning algorithm that generates safe but efficient trajectories for an autonomous vehicle to execute along the simulated highway. 
 
 ## Project Details
@@ -68,8 +70,6 @@ If you would like to be in the middle lane, add the waypoint's coordinates to th
 The sensor fusion variables carries all the relevant information for each car on the right-hand side of the road, namely its identifier and kinematic state parameters. 
 
 `[sensor_fusion]` A 2d vector of cars and then that car's [car's unique ID, car's x position in map coordinates, car's y position in map coordinates, car's x velocity in m/s, car's y velocity in m/s, car's s position in frenet coordinates, car's d position in frenet coordinates. 
-
-
 
 
 ### Model Structure 
